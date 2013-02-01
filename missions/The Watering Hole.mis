@@ -1,0 +1,553 @@
+// DisplayName = The Watering Hole
+// MissionTypes = Construction
+
+//--- MISSION QUOTE BEGIN ---
+//A peaceful watering hole for all to drink.
+//No predators, No worries, Just Peace...
+//--Nukem
+//--- MISSION QUOTE END ---
+
+//--- MISSION STRING BEGIN ---
+//No vehicle station.
+//Inventory Bunker is accessable by all teams.
+//Map made by: Blnukem
+//Mission touched up by Eolk
+//--- MISSION STRING END ---
+
+//--- OBJECT WRITE BEGIN ---
+new SimGroup(MissionGroup) {
+
+	CTF_scoreLimit = "6";
+	powerCount = "0";
+	musicTrack = "lush";
+	cdTrack = "2";
+	CTF_timeLimit = "25";
+
+	new MissionArea(MissionArea) {
+		area = "-688 -640 1360 1280";
+		flightCeiling = "5000";
+		flightCeilingRange = "50";
+
+		locked = "true";
+	};
+	new WaterBlock() {
+		position = "-1024 -1024 -26.4";
+		rotation = "1 0 0 0";
+		scale = "2048 2048 69";
+		liquidType = "Water";
+		density = "0";
+		viscosity = "15";
+		waveMagnitude = "0.5";
+		surfaceTexture = "terrain/seawaterfull2";
+		surfaceOpacity = "0.5";
+		envMapTexture = "LiquidTiles/archipelago_emap_cloudsground";
+		envMapIntensity = "0.4";
+		removeWetEdges = "0";
+
+		extent = "100 100 10";
+		params1 = "0.63 -2.41 0.33 0.21";
+		params0 = "0.32 -0.67 0.066 0.5";
+		params3 = "1.21 -0.61 0.13 -0.33";
+		seedPoints = "0 0 1 0 1 1 0 1";
+		floodFill = "1";
+		params2 = "0.39 0.39 0.2 0.133";
+		textureSize = "32 32";
+		locked = "TRUE";
+	};
+	new TerrainBlock(Terrain) {
+		rotation = "1 0 0 0";
+		scale = "1 1 1";
+		detailTexture = "details/lushdet1";
+		terrainFile = "SkinnyDip.ter";
+		squareSize = "8";
+
+		position = "-1024 -1024 0";
+		hazeDistance = "150";
+		visibleDistance = "850";
+		locked = "true";
+	};
+	new NavigationGraph(NavGraph) {
+		conjoinAngleDev = "45";
+		cullDensity = "0.3";
+		customArea = "0 0 0 0";
+
+		GraphFile = "SkinnyDip.nav";
+		scale = "1 1 1";
+		XDimOverSize = "0";
+		conjoinBowlDev = "20";
+		position = "0 0 0 1";
+		coverage = "0";
+		YDimOverSize = "0";
+		rotation = "0 0 0 0";
+		locked = "true";
+	};
+	new Sky(Sky) {
+		position = "-1196 -820 0";
+		rotation = "1 0 0 0";
+		scale = "1 1 1";
+		cloudHeightPer[0] = "0.349971";
+		cloudHeightPer[1] = "0.25";
+		cloudHeightPer[2] = "0.199973";
+		cloudSpeed1 = "0.01";
+		cloudSpeed2 = "0.02";
+		cloudSpeed3 = "0.03";
+		visibleDistance = "1000";
+		useSkyTextures = "1";
+		renderBottomTexture = "0";
+		SkySolidColor = "0.200000 0.200000 0.200000 0.000000";
+		fogDistance = "850";
+		fogColor = "0.500000 0.600000 0.600000 1.000000";
+		fogVolume1 = "500 0 45";
+		fogVolume2 = "0 0 0";
+		fogVolume3 = "0 0 0";
+		materialList = "nef_Surreal1.dml";
+		windVelocity = "0 0 0";
+		windEffectPrecipitation = "0";
+		fogVolumeColor1 = "128.000000 128.000000 128.000000 0.000000";
+		fogVolumeColor2 = "128.000000 128.000000 128.000000 -198748244414614883000000000000000000000.000000";
+		fogVolumeColor3 = "128.000000 128.000000 128.000000 -222768174765569861000000000000000000000.000000";
+		high_visibleDistance = "-1";
+		high_fogDistance = "-1";
+		high_fogVolume1 = "-1 3.27833e-28 3148.48";
+		high_fogVolume2 = "-1 2.24208e-44 2.51673e-42";
+		high_fogVolume3 = "-1 7.74718e+31 1.49413e-07";
+
+		cloudSpeed0 = "0.000000 0.000000";
+		locked = "true";
+	};
+	new SimGroup(Teams) {
+
+		powerCount = "0";
+
+		new SimGroup(Team1) {
+
+			powerCount = "0";
+                                                providesPower = "1";
+                                                 
+			new SimGroup(spawnspheres) {
+
+				powerCount = "0";
+
+				new SpawnSphere() {
+					position = "3.59498 215.024 67.0999";
+					rotation = "1 0 0 0";
+					scale = "1 1 1";
+					dataBlock = "SpawnSphereMarker";
+					lockCount = "0";
+					homingCount = "0";
+					radius = "50";
+					sphereWeight = "100";
+					indoorWeight = "100";
+					outdoorWeight = "100";
+
+					team = "1";
+					locked = "True";
+				};
+			};
+			new SimGroup(Base0) {
+
+				powerCount = "0";
+
+				new InteriorInstance() {
+					position = "3.59498 222.424 73.2999";
+					rotation = "1 0 0 0";
+					scale = "1 1 1";
+					interiorFile = "bbunk1.dif";
+					showTerrainInside = "0";
+
+					team = "1";
+					locked = "True";
+				};
+				new WayPoint() {
+					position = "3.59498 215.024 67.0999";
+					rotation = "1 0 0 0";
+					scale = "1 1 1";
+					dataBlock = "WayPointMarker";
+					lockCount = "0";
+					homingCount = "0";
+					name = "Inventory Bunker";
+					team = "1";
+
+					locked = "True";
+				};
+				new StaticShape() {
+					position = "-1.21538 209.228 67.2999";
+					rotation = "0 0 -1 90";
+					scale = "1 1 1";
+					dataBlock = "StationInventory";
+					lockCount = "0";
+					homingCount = "0";
+
+					Trigger = "12831";
+					team = "1";
+					Target = "34";
+					locked = "True";
+				};
+				new StaticShape() {
+					position = "8.39626 220.828 67.2999";
+					rotation = "0 0 1 90";
+					scale = "1 1 1";
+					dataBlock = "StationInventory";
+					lockCount = "0";
+					homingCount = "0";
+
+					Trigger = "13086";
+					team = "1";
+					Target = "35";
+					locked = "True";
+				};
+			};
+		};
+		new SimGroup(team0) {
+
+			powerCount = "0";
+		};
+	};
+	new SimGroup(ObserverDropPoints) {
+
+		powerCount = "0";
+
+		new Camera() {
+			position = "-20.2479 608.29 286.973";
+			rotation = "0 0 1 179.518";
+			scale = "1 1 1";
+			dataBlock = "Observer";
+			lockCount = "0";
+			homingCount = "0";
+
+			team = "0";
+			locked = "TRUE";
+		};
+		new Camera() {
+			position = "129.177 8.26169 233.147";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			dataBlock = "Observer";
+			lockCount = "0";
+			homingCount = "0";
+
+			team = "0";
+			locked = "true";
+		};
+	};
+	new Sun() {
+		position = "-13.3917 17.5838 -5.8";
+		rotation = "1 0 0 0";
+		scale = "1 1 1";
+		direction = "0.57735 0.57735 -0.57735";
+		color = "0.800000 0.800000 0.800000 1.000000";
+		ambient = "0.200000 0.200000 0.200000 1.000000";
+		texture[0] = "special/sunFlare";
+		texture[1] = "special/sunFlare02";
+		texture[2] = "special/LensFlare/flare01";
+		texture[3] = "special/LensFlare/flare02";
+		texture[4] = "special/LensFlare/flare03";
+		lensFlareScale = "0.7";
+		lensFlareIntensity = "1";
+		frontFlareSize = "300";
+		backFlareSize = "450";
+		flareColor = "1.000000 1.000000 1.000000 1.000000";
+	};
+	new SimGroup(Enviorment) {
+
+		powerCount = "0";
+
+		new TSStatic() {
+			position = "10.8244 -7.8483 50.7992";
+			rotation = "-0.0199068 -0.0957422 0.995207 23.6013";
+			scale = "1 1 1";
+			shapeName = "borg18.dts";
+
+			locked = "True";
+		};
+		new TSStatic() {
+			position = "129.071 -93.5386 47.3364";
+			rotation = "-0.868171 -0.495961 -0.0173657 4.61922";
+			scale = "1 1 1";
+			shapeName = "borg19.dts";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "10.8244 -7.8483 50.7992";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/rumblingthunder.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "100000";
+			maxDistance = "100000";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "30000";
+			maxLoopGap = "60000";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "10.8244 -7.8483 50.7992";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/moaningwind1.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "100000";
+			maxDistance = "100000";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "1";
+		};
+		new AudioEmitter() {
+			position = "-10.9796 128.39 41.6198";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "89.2546 160.244 43.3263";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "238.176 165.464 42.6";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "298.196 39.4907 42.7479";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "214.949 -75.4058 42.7786";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "88.187 -160.324 42.6";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "-41.0417 -79.4459 43.209";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "16.6086 21.0583 43.7248";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new AudioEmitter() {
+			position = "113.682 64.9883 42.6";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			fileName = "fx/environment/river2.wav";
+			useProfileDescription = "0";
+			outsideAmbient = "1";
+			volume = "1";
+			isLooping = "1";
+			is3D = "1";
+			minDistance = "10";
+			maxDistance = "150";
+			coneInsideAngle = "360";
+			coneOutsideAngle = "360";
+			coneOutsideVolume = "1";
+			coneVector = "0 0 1";
+			loopCount = "-1";
+			minLoopGap = "0";
+			maxLoopGap = "0";
+			type = "EffectAudioType";
+
+			locked = "True";
+		};
+		new InteriorInstance() {
+			position = "607.358 63.2132 109.417";
+			rotation = "0.964416 -0.242434 -0.105484 43.8273";
+			scale = "1 1 1";
+			interiorFile = "btowr6.dif";
+			showTerrainInside = "0";
+
+			locked = "True";
+		};
+		new InteriorInstance() {
+			position = "340.38 -344.118 189.032";
+			rotation = "1 0 0 0";
+			scale = "1 1 1";
+			interiorFile = "bspir4.dif";
+			showTerrainInside = "0";
+
+			locked = "True";
+		};
+		new InteriorInstance() {
+			position = "549.464 199.982 179.859";
+			rotation = "0 0 1 221.917";
+			scale = "1 1 1";
+			interiorFile = "bspir5.dif";
+			showTerrainInside = "0";
+
+			locked = "True";
+		};
+	};
+};
+//--- OBJECT WRITE END ---

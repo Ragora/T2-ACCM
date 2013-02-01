@@ -1,0 +1,152 @@
+ACCM Advanced Help/Chat Command list.
+
+Command Tutorial:
+
+When you see anything similar to: "[SomeMessage]" next to a chat command, that means it is required to type after the chat command in order for the command to work.
+For example, the first command on this list, /CreateSquad [Name], requires you to type a Name for the squad after typing /CreateSquad.
+Example: /CreateSquad Rouges - This will create a squad called "Rouges"
+
+There may be specified options that you MUST choose from, for example, the command /DroneBattle has many options. The most useful is that you can customize the battles.
+The command looks something like this: /DroneBattle [Single/Battle/Custom], you need to choose one of those variables that are divided by a "/" by simply typing it after the command.
+
+There are times where the variables are told while you are typing the command, and are not specified in the /help command. For example, if you just type: /DroneBattle Custom, an error
+message will appear telling you to type the radius for the drones to spawn, this same thing can also occur with zombie commands as well, and it can occur multiple times in a command.
+If this comes up, don't worry, it's perfectly normal. You just need to type the varible the command is requesting. 
+If you type /DroneBattle Custom this exact message will pop up: "Please specify the spawn radius. Radius cannot be lower than 500 meters." This means you need to specify the radius by 
+typing: /DroneBattle Custom 500 (Or higher than 500 if you choose) then after you type that, another message will appear requesting another variable. So if a command is asking you to type
+a variable, there is nothing wrong with the command, it's just asking to be completed.
+
+Now you understand the basics of ACCM chat commands, if you are still unsure about something, ask a mod developer.
+
+Chat Commands List:
+
+1. Squad Commands:
+
+   • /CreateSquad [Name] - Create your own squad. (Sergeant Rank Required)
+   • /S [Text] - Privatly Chat with your squad.
+   • /LeaveSquad - Leave the squad you are in.
+   • /Invite [PlayerName] - Invite a person to your Squad.
+   • /RequestInvite [SquadName] - Request an Invite to a Squad.
+   • /Join - Use this to accept an invite to a squad.
+   • /SOL - Spawn around your squad's leader.
+   • /ListSquads - Lists all squads in the server.
+   • /Force [Join/Leave] [SquadName] [PlayerName] - Force a person to leave/join a squad. (General Rank Required)
+
+2. Rank Commands:
+
+   • /ItemRestrictions - Gives a list of the weapons/packs that are restricted to ranks.
+   • /Top5 - Gives a list of players with the highest ranks.
+   • /ListRanks - Lists all the ranks and the points required to get that rank.
+   • /CheckStats - Check your current rank and score.
+   • /CheckStats [PlayerName] - Check the current rank and score of another person.
+
+3. Zombie Point Help:
+   
+   • /PlaceZombiePoint [SpawnName] [ZType] [Time] [MaxZombies] [ZombieLimit] - Places an advanced zombie point.
+   • /ListZombieSpawns - Lists all the advanced zombie points.
+   • /DisableSpawn [SpawnName] - Disables an advanced zombie point by label.
+   • /DisableAllSpawns - Disables all advanced zombie points.
+   • /EnableSpawn [SpawnName] - Enables an advanced zombie point by label.
+   • /EnableAllSpawns - Enables all advanced zombie points.
+   • /RemoveSpawn [SpawnName] - Removes an advanced zombie spawn.
+   • /RemoveAllSpawns - Removes all advanced zombie spawns.
+   • /GetStatus [SpawnName] - Get the status of a an advanced zombie spawn by label.
+   • /MarkZombieSpawns - Marks all zombie spawns.
+   • /SaveSpawns [Radius] [FileName.cs] - Save all of the advanced zombie spawns whithin said radius to said filename.
+   • /LoadSpawns [Radius] [FileName.cs] - Load zombie spawns whithin said filename.
+   • /ReplaceSpawn Type[Single/Radius/All] [Arg2] - Replaces advanced spawns with regular spawns. Which ones get replaced depends solely on your input.
+
+4. "Quick Help" Commands:
+
+   • /BasicCMDS - Basic Commands.
+   • /BuildOptions - Building Options.
+   • /ZCMDS - Zombie Commands.
+   • /SCMDS - Sentinel Commands.
+   • /DCMDS- Drone Commands.
+   • /AdminCMDS - Admin Commands.
+   • /SACMDS - Super Admin Commands.
+
+5. The /Help Command:
+
+   • Command Options: BasicCommands, BuildingOptions, AdminCommands, SACommands, SentinelCommands, ZombieCommands, DroneCommands and QuickCommands.
+   The /help command is like any command that requires options. You need to type "/Help" then type one of the options above. Example: /Help BuildingOptions will give you
+   a list of Building Options. It's pretty simple, there is also an in-game tutorial for using the /Help command known as "/Help Usage"
+
+6. Building Options:
+
+   • /Delmypieces - Delete all of your pieces.
+   • /Objectscale [X Y Z] - Basic scaling function.
+   • /Getscale - Get the scale of an object.
+   • /Pos [X Y Z] - This will move an object in X Y Z format.
+   • /GetPos - This gets the postition of an object.
+   • /SetFreq [#] - Set your power frequency.
+   • /ObjectName [DesiredName] - Sets a name to a deployable.
+   • /Radius [Radius] - Sets the radius for Switches/Tripwires.
+   • /Cloak - Makes your pieces invisible.
+
+7. Basic Commands:
+
+   • ![PlayerName] [Message] - Private messaging.
+   • /Opendoor - Point at a door and use this command to open it. (You can also use /Open)
+   • /Opendoor [Password] - Point at a door and use this command to open it if it's passworded.
+   • /Setdoorpass [Password] - Point at a door and use this to set it\'s password.
+   • /ChooseSpawn [#]- Choose a selected spawnpoint to spawn there.
+   • /ListSpawns - Displays all spawnpoints on your team.
+   • /Hack Help - Tells you how to Hack enemy teleporters.
+   • /SquadHelp - Tells you how to use squad commands.
+   • /RankHelp - Tells you basic information on ranks.
+   • /Tips - This will give you a random tip.
+   • /Info [PlayerName] - Get basic info on a specified player.
+
+8. Sentinel Commands:
+
+   Unfortunatally, since our AI developer is refusing to work, the Sentinels will not be available ACCM 1.3, we appologize for the inconvienence.
+
+9. Drone Commands:
+   
+  • /DroneBattle [Single/Battle/Custom] - Basic Command where you can spawn either single drones, full battles, or even customize battles.
+
+10. Zombie Commands:
+
+  • /BuyZpack - Buy a zombie pack.
+  • /MakeZLord [PlayerName] - Make the person a lord zombie.
+  • /MakeRapier [PlayerName] - Make the person a regular zombie.
+  • /Stalk [PlayerName] [ZType] Difficulty[Cool/Light/Medium/Heavy] - Spawn zombies around around a target.
+  • /Cure [PlayerName] - Cures a person.
+  • /Infect [PlayerName] - Infect the target with the zombie virus.
+  • /KillZombies - Kills all zombies and infected.
+  • /ZDetectDist [Radius] - Set how large the zombie detection distance is.
+  • /SemiInfect [PlayerName] - Infect that person with the altrenative virus.
+  • /PlacePod [ZType] Respawn[Yes/No] - Places a zombie pod at your crossairs.
+  • /RemovePod - Point at a pod to remove it.
+  • /ZombiePointHelp - Displays the commands for advanced zombie spawn points.
+
+11. Admin Commands:
+
+  • /JailPlayer [PlayerName] [Time] - Sends a specified player to jail for a set amount of time.
+  • /AddTeam - Add/Removes a second team.
+  • /Gag [PlayerName] [Time] - Silences an annoying player.
+  • /CancelVote - Cancels a vote.
+  • /DelPieces [PlayerName] - Deletes a specified player\'s pieces.
+  • /Kill [PlayerName] - Kill someone.
+  • /ChangeName [PlayerName] [Color] [NewName] - Changes the target\'s name.
+  • /Goto [PlayerName] - Go directly to a specified person.
+  • /Summon [PlayerName] - Summon a specified person.
+  • /Moveto [X Y Z] - Go directly to a desired location.
+  • /Moveme [X Y Z] - Move on your X, Y or Z axis.
+  • /BottomPrint [Text] - Send a message on the bottom of the screen.
+  • /CenterPrint [Text] - Send a message in the center of the screen.
+  • /ForceTeamSpawn [TeamName] [SpawnNumber] - Forces an entire team to spawn at one spawnpoint.
+  • /SaveBuilding [Radius] [FileName.cs] - Save buildings in the server.
+  • /LoadBuilding [FileName.cs] - Load a building file.
+  • /A [Message] - Admin private messaging.
+  • /BuySCG - Force a SCG into your inventory.
+  • /Turrets - Enables/disables turrets when purebuild is on.
+
+12. Super Admin Commands:
+
+  • /Admin [PlayerName] - Force someone to become Admin.
+  • /SuperAdmin [PlayerName] - Force someone to become Super Admin.
+  • /Echo [PlayerName] - Silently mute someone without them knowing.
+  • /Shred [PlayerName] - Put someone in the ACCM paper shredder.
+  • /SA [Message] - Super Admin private messaging.

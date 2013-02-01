@@ -1,0 +1,116 @@
+ACCM 1.4.0 [For Deflun :] ------------------------------
+* The turret override (disable / enable turrets) now works outside of purebuild.
+* Emplacements can no longer be controlled via the command circuit.
+* Fix an issue with doors not saving timeout when being re-textured. [Thanks, Deflun]
+* Added power change modes to the light. [Request by Deflun]
+* More tripwire modes for easier storm-making.
+* Demon Mothers can now be spawned for the zombie spawn pack.
+* Changed the spawn point shape and gave it a small power radius. [Request by Krash]
+* Demon armor can now be controllable.
+* Multiple instability and bug fixes.
+* Fixed a crash related to sentinels firing with their turret.
+* Human rapiers are no longer extremely hard to control. They now run and jet.
+* Updated the command satellite to the version in CCM 3.4.
+* Replaced the drone AI with the version in CCM 3.4 (because the old one caused the server to crash).
+* Fixed the texture tool icon.
+* Removed the advanced zombie spawns. The regular zombie spawn pack should be all you need.
+
+ACCM 1.3.2 ---------------------------------------------
+* Fixed the tripwire modes. There are no longer "blank" modes.
+* Smurf identifying upon join is no longer displayed when playing LAN.
+* Changes have been made to the Merge Tool.
+* Fixed zombie jumping ability.
+* Targeting lasers no longer leave a lingering beacon at "0 0 0" when not in a valid position.
+* Fixed a bug which disallowed keepers and admins to make other people zombies.
+* There is now a "Max Zombies" function.
+* Fixed a fatal (to the server) exploit.
+* Fixed a scoring-related console spam error with ccKillZombies.
+* Added saving support for antidote station antidotes (they didn't save, often resulting in an empty antidote station loaded) and deployed waypoint. Older saves are still compatible.
+* Added a way to refill antidote stations.
+* Technicians cannot deploy satchel charges anymore, but, they may deploy antidote stations.
+* Fixed a bug with ForceTeamSpawn.
+* ccGag and ccEcho have been replaced with a more effective ccMute.
+* Added a texture tool.
+* Added the blue pad.
+* Improved the doors.
+* Multiple chat command improvements.
+* There's now an ability to give pieces.
+* Fixed the demon mother so it now bites and dies correctly.
+
+ACCM 1.3.1 ---------------------------------------------
+* Fixed the /BuyZPack command.
+* Fixed the make person Zombie commands.
+* Gave Zombies targets, they now have custom skins and stuff.
+* Fixed the drop pods.
+* Numerous bug fixes and tweaks.
+
+ACCM 1.3 ---------------------------------------------
+* New Weapons.
+* New GUI.
+* Redone the /Help Command.
+* Fixed the Grav Cycle.
+* Fixed the DeathMessages.
+* Numerous bug fixes and tweaks.
+
+ACCM 1.24 ---------------------------------------------
+* Fixed the private messaging.
+* Digger pack update rate is now set accordingly in serverDefaults.cs.
+* Sentinels put back in for scripters who know how to access them. Help commands for them have been removed.
+* /setScale and the editor tool now accept larger scales.
+* Fixed a message error with /cancelVote.
+* There is now an option to remove pods. 
+* Rapiers are now controllable.
+* You may now vote someone "zombie keeper" if the server prefs allow it. 
+
+ACCM 1.23 ---------------------------------------------
+* Added the changename function again. 
+* Fixed a few editing tool bugs.
+* Fixed /admin and /superadmin to correctly add the super chaingun.
+* Fixed an error with the wait message. 
+* More variables have been added in serverDefaults.cs.
+* Tweaked a few help messages.
+* Sentinels have been removed until all the bugs have been worked out or an alternative comes up. (Note: They're not COMPLETELY removed, just the brain is gone.)
+* Admin password changer was broken.
+
+ACCM 1.221 --------------------------------------------
+* Fixed a bug that caused /Stalk to lock up.
+* Removed the fix for lingering player objects. Claimed to cause UEs.
+* Fixed the digger pack (thanks to Dark Dragon DX for pointing out).
+
+ACCM 1.22 ---------------------------------------------
+
+* /set has been split up.
+* A new chat command: /power has been added.
+* Added chat-logging. Toggleable by a variable. 
+* Tweaked the help commands. Fixed typos and added sentinels.
+* Fixed a bug which caused Sentinels and Bot Zombies to leave lingering player objects. 
+* Fixed a bug which caused Sentinels and Bot Zombies to not drop correctly. 
+* Bot Zombies can now be accessed by chat command. 
+* Removed a lingering $testcheats in an if statement for the medpack which caused the random "burn" check to always turn up true.
+* Help commands have been re-done to look more traditional.
+* SentinelArmy command has been decreased from super admin to public admin. 
+* BurnSN command has been decreased from super admin to public admin. 
+* The Drone commands have been decreased from super admin to public admin.
+* Tweaked the drone commands a bit so they are more efficient.
+
+ACCM 1.21 ---------------------------------------------
+
+* Fixed an exploit which could let admins to ban anyone.
+* Replaced CCM crash protection with Classic Mod version. Less prone to mistakes.
+* Patch for CCM has been applied. No more drop pod problems.
+* Put protection on SAD. Can be toggled with a variable.
+* SAD now has different passwords for Admin and Super Admin.
+* Locking the teams is now supported through the /set.
+* Admin and Super Admin passwording is now supported through /set.
+* /set now exports to preferences whenever necessary.
+* The useless SpecOps training has now been removed.
+* "Fair Teams" has been taken from Classic and put in here.
+* AI addon -- ai.cs. File was missing. Fixes sentinel AI.
+* The capture pack has been put on hold.
+* A new pack has been added: The Digger Pack.
+* Waypoint pack has been removed.
+* New File Added: serverDefaults.cs
+* Fixed the load menu
+
+ACCM 1.2 and lower ------------------------------------
+* Not sure...

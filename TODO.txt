@@ -1,0 +1,4 @@
+Enhance the zombie spawn pack to be like the advanced spawns.
+Sentinels!
+Affliction Scripts -> weather control?
+Zombie pods?
