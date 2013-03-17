@@ -229,6 +229,7 @@ function writeBuildingComponent(%obj) {
 			echo("Saving: " @ %obj @ " Name: " @ %dataBlockName);
 		%buildingPiece = "%building = new (" @ %obj.getClassName() @ ") () {";
 		%buildingPiece = %buildingPiece @ "datablock = \"" @ %dataBlockName @ "\";";
+		if (%obj.nameTag !$= "") %buildingPiece = %buildingPiece @ "nameTag = \"" @ %obj.nameTag @ "\";";
 		if (%obj.position !$= "") %buildingPiece = %buildingPiece @ "position = \"" @ %obj.position @ "\";";
 		if (%obj.rotation !$= "") %buildingPiece = %buildingPiece @ "rotation = \"" @ %obj.rotation @ "\";";
 		if (%obj.realScale !$= "") %buildingPiece = %buildingPiece @ "scale = \"" @ %obj.realScale @ "\";";
