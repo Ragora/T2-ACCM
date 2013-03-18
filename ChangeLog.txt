@@ -1,3 +1,14 @@
+ACCM 1.5.0 --------------------------------------------------
+* DarkDragonDX takes up development.
+* Fixed saving of objects with names set via /name (generators, solar panels, etc are excluded as they are supposed to display frequency #)
+* Removed a bunch of Sentinel Stuff (by Blnukem) -- their AI was never actually finished it seemed.
+* Chat command '/killzombies' used to only half the zombie population. Now it kills them all.
+* Several occurances of console spam were fixed.
+* Removed unused files, reorganized files slightly.
+* Added Linux shell script for deleting .dso files if you're weird like me and run on some Linux operating system via WINE.
+* Team 6 is now the 'offical zombie team'. This just means zombie teams are set to this by default.
+* Added player.setSkin() and player.setName() -- they need tested
+
 ACCM 1.4.0 [For Deflun :] ------------------------------
 * The turret override (disable / enable turrets) now works outside of purebuild.
 * Emplacements can no longer be controlled via the command circuit.
