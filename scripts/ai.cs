@@ -363,17 +363,20 @@ function SimObject::AIMissionInit(%this)
 
 function ItemData::AIMissionInit(%data, %object)
 {
-	$AIItemSet.add(%object);
+	if (isObject($AIItemSet))
+		$AIItemSet.add(%object);
 }
 
 function AIThrowObject(%object)
 {
-	$AIItemSet.add(%object);
+	if (isObject($AIItemSet))
+		$AIItemSet.add(%object);
 }
 
 function AIGrenadeThrown(%object)
 {
-	$AIGrenadeSet.add(%object);
+	if (isObject($AIItemSet))
+		$AIGrenadeSet.add(%object);
 }
 
 function AIDeployObject(%client, %object)

@@ -261,7 +261,7 @@ function ccKillZombies(%sender)
    logEcho(%sender.nameBase@" ("@%sender@") killed all zombies and cured all infected people");
    %zgroup = nameToID("MissionCleanup/ZombieGroup");
    %zcount = %zgroup.getCount();
-   for (%i = 0; %i < %zcount; %i++)
+   for (%i = %zcount; %i > 0; %i--)
    {
       %zombie = %zgroup.getObject(%i);
       if (isObject(%zombie))

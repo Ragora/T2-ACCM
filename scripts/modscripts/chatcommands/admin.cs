@@ -687,14 +687,17 @@ function ccLoadBuilding(%sender, %args)
 }
 
 // Blnukem
-function ccTurrets(%sender) {
+function ccTurrets(%sender) 
+{
 if (!%sender.isAdmin)
    return;
-  if ($TurretEnableOverride) {
+  if ($TurretEnableOverride) 
+  {
     $TurretEnableOverride = 0;
     messageAll('MsgAdminForce', "\c3"@%sender.nameBase@"\c2 has disabled turrets.");
   }
-  else {
+  else 
+  {
     $TurretEnableOverride = 1;
     messageAll('MsgAdminForce', "\c3"@%sender.nameBase@"\c2 has enabled turrets.");
   }
@@ -702,7 +705,8 @@ if (!%sender.isAdmin)
 }
 
 // Blnukem
-function ccBuySCG(%sender) {
+function ccBuySCG(%sender) 
+{
    if (!%sender.isAdmin)
       return;
 

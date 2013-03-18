@@ -209,6 +209,8 @@ function globalPowerCheck() {
 
 function checkPowerGenerator(%powerObj,%stateChange) {
 	%group = nameToID("MissionCleanup/Deployables");
+	if (!isObject(%group))
+		return;
 	%count = %group.getCount();
 	for(%i=0;%i<%count;%i++) {
 		%obj = %group.getObject(%i);

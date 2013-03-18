@@ -249,6 +249,9 @@ function ScoutChaingunPairImage::onFire(%data,%obj,%slot)
 
 function fireNextGun(%obj)
 {
+   if (!isObject(%obj))
+	return;
+
    if(%obj.fireWeapon)
    {
       if(%obj.nextWeaponFire == 2)

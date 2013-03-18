@@ -129,3 +129,6 @@ exec("scripts/packs/artillerybarrelpack.cs");
 exec("scripts/packs/generator.cs");
 exec("scripts/packs/solarpanel.cs");
 exec("scripts/packs/switch.cs");
+
+// --- Misc
+exec("scripts/packs/waypointpack.cs");
