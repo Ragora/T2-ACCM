@@ -444,6 +444,7 @@ function ccBf(%sender,%args)
    if (!isObject(%sender.player))
    {  // No player object? Bitch, you can't use this command.
       MessageClient(%sender, "Msg", "\c2You you have a player object in order to buy your inventory. ~wfx/misc/misc.error.wav");
+      return;
    }
 
    if (%sender.BasicTimer > 0)

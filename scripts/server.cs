@@ -8,7 +8,7 @@ $SB::WODec = 0.004;
 $SB::DFDec = 0.02;
 
 $DefaultGravity = -20;
-setperfcounterenable(0); // Blnukem - Do not change this. It's lag protection.
+setPerfCounterEnable(0); // Blnukem - Do not change this. It's lag protection.
 CheckClientCount();
 
 function onTelnetConnect(%ip, %access) {
@@ -117,24 +117,28 @@ function CreateServer(%mission, %missionType) {
    exec("scripts/chatCommands.cs");
    exec("scripts/skywrite.cs");
    exec("scripts/dEffects.cs");
-   exec("scripts/rankstuff.cs");
-   exec("scripts/SpecOpsFeatures.cs");
-   exec("scripts/modscripts/ModFunctions.cs");
-   exec("scripts/modscripts/ChatCommands/AdminCommands.cs");
-   exec("scripts/modscripts/ChatCommands/AICommands.cs");
-   exec("scripts/modscripts/ChatCommands/SACommands.cs");
-   exec("scripts/modscripts/ChatCommands/ZombieCommands.cs");
-   exec("scripts/modscripts/ChatCommands/HelpCommand.cs");
-   exec("scripts/modscripts/AI/DroneAI.cs");
-   exec("scripts/modscripts/AI/S11AI.cs");
-   exec("scripts/modscripts/AI/S17AI.cs");
-   exec("scripts/modscripts/AI/SentinelData.cs");
-   exec("scripts/modscripts/AI/SentinelAI.cs");
+
+   // -- ACCM Executes
+   exec("scripts/modscripts/ranking.cs");
+   exec("scripts/modscripts/specops.cs");
+   exec("scripts/modscripts/modfunctions.cs");
+
+   exec("scripts/modscripts/chatcommands/admin.cs");
+   exec("scripts/modscripts/chatcommands/ai.cs");
+   exec("scripts/modscripts/chatcommands/sa.cs");
+   exec("scripts/modscripts/chatcommands/zombie.cs");
+   exec("scripts/modscripts/chatcommands/help.cs");
+
+   exec("scripts/modscripts/ai/drone.cs");
+   exec("scripts/modscripts/ai/s11.cs");
+   exec("scripts/modscripts/ai/s17.cs");
+   exec("scripts/modscripts/ai/zombie.cs");
+
    exec("scripts/turrets/mortarBarrelLarge.cs");
-   exec("scripts/packs/waypointpack.cs");
-   exec("scripts/Data/PulseData.cs");
-   exec("scripts/Data/MessageData.cs");
-   exec("scripts/Data/VariableDefaults.cs");
+   exec("scripts/data/PulseData.cs");
+   exec("scripts/data/MessageData.cs");
+   exec("scripts/data/VariableDefaults.cs");
+   exec("scripts/modscripts/player.cs");
 
    if (!isDemo())
    {

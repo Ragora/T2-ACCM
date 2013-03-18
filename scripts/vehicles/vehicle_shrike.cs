@@ -617,7 +617,9 @@ datablock ShapeBaseImageData(ScoutChaingunParam)
 function shrikeMissileImage::onFire(%data,%obj,%slot) 
 { 
    %p = Parent::onFire(%data, %obj, %slot);
-   %obj.getMountNodeObject(0).decInventory(%data.ammo, 1);
+   %mountNodeObj = %obj.getMountNodeObject(0);
+   if (isObject(%mountNodeObj))
+   	%mountnodeObj.decInventory(%data.ammo, 1);
    MissileSet.add(%p);
 
    if(%obj.isdrone == 1)
