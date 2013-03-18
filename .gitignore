@@ -6,3 +6,7 @@ MergeToolTemp.txt
 lighting/
 ServerLogs/
 prefs/
+*.txt~
+*.cs~
+*.bat~
+*.sh~
