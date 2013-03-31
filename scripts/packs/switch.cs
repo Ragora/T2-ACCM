@@ -142,7 +142,9 @@ function SwitchDeployableImage::onDeploy(%item, %plyr, %slot) {
 
 	// set power
 	%deplObj.setSelfPowered();
-	setTargetName(%deplObj.target,addTaggedString("Frequency" SPC %deplObj.powerFreq));
+	%name = "Frequency" SPC %deplObj.powerFreq;
+	setTargetName(%deplObj.target,addTaggedString(%name));
+	%deplObj.nameTag = %name;
 
 	// set the sensor group if it needs one
 	if (%deplObj.getTarget() != -1)
@@ -167,7 +169,9 @@ function SwitchDeployableImage::onDeploy(%item, %plyr, %slot) {
 
 	if (%deplObj.timed == 2) {
 		%deplObj.stopThread($AmbientThread);
-		setTargetName(%deplObj.target,addTaggedString("Disabled Frequency" SPC %deplObj.powerFreq));
+		%name = "Disabled Frequency" SPC %deplObj.powerFreq;
+		setTargetName(%deplObj.target,addTaggedString(%name));
+		%deplObj.nametag = %deplObj.name;
 		%deplObj.isSwitchedOff = true;
 	}
 
@@ -227,14 +231,37 @@ function toggleSwitch(%obj,%state,%col,%delayed) {
 	if (%state == true) {
 		%obj.play3D(SwitchToggledSound);
 		%obj.playThread($AmbientThread,"ambient");
-		setTargetName(%obj.target,addTaggedString("Frequency" SPC %obj.powerFreq));
+		if (%obj.name !$= "")
+		{
+			%name = "[" @ %obj.name @ "] Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
+		else
+		{
+			%name = "Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
 		if (!%force)
 			messageClient(%col.client, 'msgClient', '\c2%1 objects attempted switched on.',%switchCount);
 	}
 	else {
 		%obj.play3D(SwitchToggledSound);
 		%obj.stopThread($AmbientThread);
-		setTargetName(%obj.target,addTaggedString("Disabled Frequency" SPC %obj.powerFreq));
+		if (%obj.name !$= "")
+		{
+			%name = "[" @ %obj.name @ "] Disabled Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
+		else
+		{
+			%name = "Disabled Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
+
 		if (!%force)
 			messageClient(%col.client, 'msgClient', '\c2%1 objects attempted switched off.',%switchCount);
 	}

@@ -229,7 +229,10 @@ function writeBuildingComponent(%obj) {
 			echo("Saving: " @ %obj @ " Name: " @ %dataBlockName);
 		%buildingPiece = "%building = new (" @ %obj.getClassName() @ ") () {";
 		%buildingPiece = %buildingPiece @ "datablock = \"" @ %dataBlockName @ "\";";
-		if (%obj.nameTag !$= "") %buildingPiece = %buildingPiece @ "nameTag = \"" @ %obj.nameTag @ "\";";
+		if (%obj.nameTag !$= "" && %obj.name $= "") %buildingPiece = %buildingPiece @ "nameTag = \"" @ %obj.nameTag @ "\";";
+		else %buildingPiece = %buildingPiece @ "nameTag = \"" @ %obj.name @ "\";";
+
+		if (%obj.name !$= "") %buildingPiece = %buildingPiece @ "name = \"" @ %obj.name @ "\";";
 		if (%obj.position !$= "") %buildingPiece = %buildingPiece @ "position = \"" @ %obj.position @ "\";";
 		if (%obj.rotation !$= "") %buildingPiece = %buildingPiece @ "rotation = \"" @ %obj.rotation @ "\";";
 		if (%obj.realScale !$= "") %buildingPiece = %buildingPiece @ "scale = \"" @ %obj.realScale @ "\";";
@@ -272,6 +275,7 @@ function writeBuildingComponent(%obj) {
 //			if (%obj.isdoor != "") %buildingPiece = %buildingPiece @ "isdoor = \"" @ %obj.isdoor@ "\";";
 			%buildingPiece = %buildingPiece @ "canmove = \"" @ %obj.canmove @ "\";";
 		}
+
 		if (%dataBlockName $= "DeployedZSpawnBase"){
 			if (%obj.ZType != "") %buildingPiece = %buildingPiece @ "ZType = \"" @ %obj.ZType@ "\";";
 			if (%obj.spawnTypeset != "") %buildingPiece = %buildingPiece @ "spawnTypeset = \"" @ %obj.spawnTypeset@ "\";";
