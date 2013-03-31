@@ -513,6 +513,7 @@ function ccName(%sender,%args, %special)
    }
       messageclient(%sender, 'MsgClient', "\c2Object name set to \c3"@%args@"");
       %obj.nametag = %args;
+      %obj.name = %args;
       setTargetName(%obj.target,addTaggedString("\c6"@%args@""));
          return;
 }

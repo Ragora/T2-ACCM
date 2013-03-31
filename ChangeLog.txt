@@ -1,13 +1,27 @@
 ACCM 1.5.0 --------------------------------------------------
 * DarkDragonDX takes up development.
-* Fixed saving of objects with names set via /name (generators, solar panels, etc are excluded as they are supposed to display frequency #)
+* Fixed saving of objects with names set via /name
+	- Names of switches and generators now save albeit they need toggled first.
 * Removed a bunch of Sentinel Stuff (by Blnukem) -- their AI was never actually finished it seemed.
 * Chat command '/killzombies' used to only half the zombie population. Now it kills them all.
 * Several occurances of console spam were fixed.
 * Removed unused files, reorganized files slightly.
 * Added Linux shell script for deleting .dso files if you're weird like me and run on some Linux operating system via WINE.
-* Team 6 is now the 'offical zombie team'. This just means zombie teams are set to this by default.
+* Team 6 is now the 'offical zombie team'. This just means zombie targets are set to this by default.
 * Added player.setSkin() and player.setName() -- they need tested
+* Edited /changeName so that color sequences are accepted
+	\c0 - Very Dark Blue-ish color
+	\c1 - Bright Green in chat window / Cyan in Lobby
+	\c2 - Faded Orange in Chat / Gray in Lobby
+	\c3 - Bright Green in chat / Dark Green in Lobby
+	\c4	- Blue in Chat (normal) / White in Lobby (Bright)
+	\c5 - Gold in Chat / White in Lobby (Bright)
+	\c6 - Blue in Chat (Normal) / White in Lobby (Normal)
+	\c7 - Blue in Chat (Normal) / Gold in Lobby
+	\c8 - Blue in Chat (Normal) / Blue In Lobby (smurf color)
+	\c9 - Blue in Chat (Normal) / Green in Lobby (Bot)
+	- Ex: /changename dx \cp\c7[Faction]\c6Name\co
+	- Also any standard ASCII junk is supported as well -- figure it out yourself.
 
 ACCM 1.4.0 [For Deflun :] ------------------------------
 * The turret override (disable / enable turrets) now works outside of purebuild.

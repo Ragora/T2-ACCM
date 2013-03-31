@@ -53,10 +53,10 @@ function CreateServer(%mission, %missionType) {
    exec("scripts/do_not_delete/loadscreen.cs");
    exec("scripts/do_not_delete/Innoculation.cs");
    exec("scripts/loadmenu.cs");
-   exec("scripts/libraries.cs");
+   exec("scripts/modscripts/libraries.cs");
    exec("scripts/do_not_delete/Dfunctions.cs");
    exec("scripts/do_not_delete/MergeToolSupport.cs");
-   exec("scripts/hfunctions.cs");
+   exec("scripts/modscripts/hfunctions.cs");
    exec("scripts/pack.cs");
    exec("scripts/vehicles/vehicle_spec_fx.cs");
    exec("scripts/vehicles/vehicle_effects.cs");
@@ -112,11 +112,12 @@ function CreateServer(%mission, %missionType) {
    exec("scripts/JTLmeteorStorm.cs");
    exec("scripts/prison.cs");
    exec("scripts/hazard.cs");
-   exec("scripts/ion.cs");
+   exec("scripts/modscripts/ion.cs");
    exec("scripts/solitudeBlock.cs");
-   exec("scripts/chatCommands.cs");
-   exec("scripts/skywrite.cs");
-   exec("scripts/dEffects.cs");
+   // Moved for organisational purposes
+   exec("scripts/modscripts/chatcommands/public.cs");
+   exec("scripts/modscripts/skywrite.cs");
+   exec("scripts/modscripts/dEffects.cs");
 
    // -- ACCM Executes
    exec("scripts/modscripts/ranking.cs");

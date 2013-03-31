@@ -748,6 +748,7 @@ function ccChangeName(%sender, %args)
       return;
    }
 
+   %name = collapseEscape(%name);
    ChangeName(%target, %name);
    messageClient(%target, "", "\c2Your new name is \c3"@%name@"\c2.");
    warn(%sender.nameBase@" ("@%sender@") changed "@%target.nameBase@"'s ("@%target@") name to "@%name);

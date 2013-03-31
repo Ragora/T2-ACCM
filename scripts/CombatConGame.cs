@@ -1076,7 +1076,7 @@ function CombatConGame::vehicleDestroyed(%game, %vehicle, %destroyer){
         %pref = (%vehicleType $= "Assault Tank") ? "an" : "a";
         messageAll( 'msgVehicleTeamDestroy', '\c0%1 TEAMKILLED %3 %2!', %destroyerName, %vehicleType, %pref);
     }
-    else{
+    else if (%destroyerName !$= "") {
         messageTeamExcept(%destroyer, 'msgVehicleDestroy', '\c0%1 destroyed an enemy %2.', %destroyerName, %vehicleType);
         messageTeam(%enemyTeam, 'msgVehicleDestroy', '\c0%1 destroyed your team\'s %2.', %destroyerName, %vehicleType);
 

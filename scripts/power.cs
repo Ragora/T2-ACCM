@@ -340,7 +340,18 @@ function toggleGenerator(%obj,%state) {
 		%obj.isSwitchedOff = "";
 		%obj.getDataBlock().gainPower(%obj);
 		%obj.play3D(%powerOnSound);
-		setTargetName(%obj.target,addTaggedString("Frequency" SPC %obj.powerFreq));
+		if (%obj.name !$= "")
+		{
+			%name = "[" @ %obj.name @ "] Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
+		else
+		{
+			%name = "Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
 		%obj.switchTime = getSimTime();
 		return 2 SPC %taggedDisplayName;
 	}
@@ -348,7 +359,18 @@ function toggleGenerator(%obj,%state) {
 		%obj.getDataBlock().losePower(%obj);
 		%obj.isSwitchedOff = 1;
 		%obj.play3D(%powerOffSound);
-		setTargetName(%obj.target,addTaggedString("Disabled Frequency" SPC %obj.powerFreq));
+		if (%obj.name !$= "")
+		{
+			%name = "[" @ %obj.name @ "] Disabled Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
+		else
+		{
+			%name = "Disabled Frequency" SPC %obj.powerFreq;
+			setTargetName(%obj.target,addTaggedString(%name));
+			%obj.nameTag = %name;
+		}
 		%obj.switchTime = getSimTime();
 		return 1 SPC %taggedDisplayName;
 	}
